@@ -8,23 +8,6 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
-  - stage: 
-    displayName: Build
-    jobs:
-    - job: build
-      steps:
-        - task: ArchiveFiles@2
-          displayName: 'Archive files'
-          inputs:
-            rootFolderOrFile: '$(Build.SourcesDirectory)'
-            includeRootFolder: false
-            archiveType: 'zip'
-            archiveFile: '$(Build.ArtifactStagingDirectory)/web-app.zip'
-            replaceExistingArchive: true
-
-        - publish: $(Build.ArtifactStagingDirectory)
-          artifact: web-app 
-
 
   - stage: 
     displayName: Selenium Testing
