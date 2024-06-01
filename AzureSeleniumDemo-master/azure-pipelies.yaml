@@ -45,7 +45,7 @@ stages:
           displayName: 'Install webdriver_manager'
         
         - script: |
-            python tests.py
+            python test.py
           displayName: 'Run Selenium Tests'
 
 
